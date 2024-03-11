@@ -25,6 +25,7 @@ class _DetailPageState extends State<DetailPage> {
           children: [
             Expanded(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Stack(
                     fit: StackFit.loose,
@@ -58,12 +59,15 @@ class _DetailPageState extends State<DetailPage> {
 
   Widget getTitle(title) {
     return Container(
-      margin: const EdgeInsets.fromLTRB(20, 0, 0, 0),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             margin: EdgeInsets.only(top: 20),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
                   margin: EdgeInsets.only(bottom: 30, top: 50),
@@ -76,6 +80,7 @@ class _DetailPageState extends State<DetailPage> {
                   ),
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     getCard(Icons.document_scanner, 'Basics', Colors.yellow),
                     getCard(Icons.backpack_rounded, 'Occupations',
@@ -83,15 +88,17 @@ class _DetailPageState extends State<DetailPage> {
                   ],
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     getCard(Icons.message, 'Conversations', Colors.blueAccent),
                     getCard(Icons.location_on, 'Places', Colors.green)
                   ],
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    getCard(
-                        Icons.dataset, 'Database', Colors.purple,UserListPage()),
+                    getCard(Icons.dataset, 'Database', Colors.purple,
+                        UserListPage()),
                     getCard(Icons.api, 'API', Colors.orange),
                   ],
                 ),
@@ -103,13 +110,13 @@ class _DetailPageState extends State<DetailPage> {
     );
   }
 
-  Widget getCard(icon, String subtitle, color,[Nav]) {
+  Widget getCard(icon, String subtitle, color, [Nav]) {
     return InkWell(
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) {
-              return Nav??IconDetailPage(color, subtitle) ;
+              return Nav ?? IconDetailPage(color, subtitle);
             },
           ),
         );

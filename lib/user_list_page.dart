@@ -69,16 +69,9 @@ class _UserListPageState extends State<UserListPage> {
               },
               child: const Padding(
                 padding: EdgeInsets.all(8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.add,
-                      color: Colors.white,
-                    ),
-                    Text('Add')
-                  ],
-                ),
+                child:  Icon(
+                  Icons.add,
+                )
               ),
             ),
           ],
@@ -123,7 +116,7 @@ class _UserListPageState extends State<UserListPage> {
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    AddUser(moperson: searchList![index]),
+                                    AddUser(moperson: searchList[index]),
                               ),
                             );
                           },
@@ -160,7 +153,7 @@ class _UserListPageState extends State<UserListPage> {
                                   margin: const EdgeInsets.fromLTRB(0, 10, 15, 10),
                                   padding: const EdgeInsets.all(5),
                                   child: Text(
-                                      searchList![index].WorkerID.toString()),
+                                      searchList[index].WorkerID.toString()),
                                 ),
                                 Expanded(
                                   child: Column(
@@ -169,7 +162,7 @@ class _UserListPageState extends State<UserListPage> {
                                     children: [
                                       Container(
                                         padding: const EdgeInsets.all(5),
-                                        child: Text(searchList![index]
+                                        child: Text(searchList[index]
                                             .FirstName
                                             .toString()),
                                       ),
@@ -177,7 +170,7 @@ class _UserListPageState extends State<UserListPage> {
                                         padding:
                                         const EdgeInsets.fromLTRB(5, 0, 5, 5),
                                         child: Text(
-                                          searchList![index]
+                                          searchList[index]
                                               .LastName
                                               .toString(),
                                           style: const TextStyle(fontSize: 10),
@@ -190,13 +183,13 @@ class _UserListPageState extends State<UserListPage> {
                                   child: Container(
                                     padding: const EdgeInsets.all(5),
                                     child: Text(
-                                        searchList![index].Salary.toString()),
+                                        searchList[index].Salary.toString()),
                                   ),
                                 ),
                                 Expanded(
                                   child: Container(
                                     padding: const EdgeInsets.all(5),
-                                    child: Text(searchList![index]
+                                    child: Text(searchList[index]
                                         .JoiningDate
                                         .toString()
                                         .substring(0, 10)),
@@ -208,7 +201,7 @@ class _UserListPageState extends State<UserListPage> {
                                       Container(
                                         padding: const EdgeInsets.all(5),
                                         child: Text(
-                                          searchList![index]
+                                          searchList[index]
                                               .DesignationName
                                               .toString(),
                                         ),
@@ -217,7 +210,7 @@ class _UserListPageState extends State<UserListPage> {
                                         padding:
                                         const EdgeInsets.fromLTRB(5, 0, 5, 5),
                                         child: Text(
-                                          searchList![index]
+                                          searchList[index]
                                               .DepartmentName
                                               .toString(),
                                           style: const TextStyle(fontSize: 10),
@@ -248,7 +241,7 @@ class _UserListPageState extends State<UserListPage> {
                           ),
                         );
                       },
-                      itemCount: searchList!.length,
+                      itemCount: searchList.length,
                     ),
                   ),
                 ],
